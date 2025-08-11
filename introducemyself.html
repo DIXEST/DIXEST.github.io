@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> <!-- Bootstrap Icons 라이브러리 링크 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Scrollspy를 위한 스타일 */
+        body {
+            position: relative; /* Scrollspy가 작동하려면 body에 position: relative 필요 */
+        }
+        /* 캐러셀 이미지 가운데 정렬 및 크기 조정 */
+        .carousel-item img {
+            margin: 0 auto; /* 이미지 좌우 여백을 auto로 설정해 가운데 정렬 */
+            width: 100%; /* 이미지 너비를 캐러셀 컨테이너에 맞춤 */
+            height: 350px; /* 모든 이미지의 높이를 350px로 고정 */
+            object-fit: contain; /* 이미지 전체가 보이도록 조정, 잘리지 않음 */
+        }
+        /* 캐러셀 캡션 글씨 색상 및 위치 조정 */
+        .carousel-caption {
+            color: black; /* 캡션 전체 글씨 색상을 검은색으로 설정 */
+            text-align: left; /* 글씨를 왼쪽 정렬 */
+            top: 20px; /* 상단에서 20px 아래로 위치 */
+            left: 20px; /* 왼쪽에서 20px 안쪽으로 위치 */
+            right: auto; /* 기본 오른쪽 위치를 해제 */
+            bottom: auto; /* 기본 하단 위치를 해제 */
+        }
+        /* 캐러셀 좌우 컨트롤 버튼 배경색 어둡게 변경 */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(50, 50, 50, 0.7); /* 어두운 회색, 반투명 */
+            width: 2rem; /* 버튼 크기 조정 */
+            height: 5rem;
+        }
+        /* Section 1의 이미지와 텍스트 레이아웃 조정 */
+        #section1 .profile-container {
+            display: flex; /* 플렉스박스로 이미지와 텍스트 나란히 배치 */
+            align-items: center; /* 세로 중앙 정렬 */
+            gap: 20px; /* 이미지와 텍스트 사이 간격 */
+        }
+        #section1 img {
+            margin: 0; /* 기본 여백 제거 */
+        }
+        /* Section 1의 텍스트 크기 조정 */
+        #section1 .text-content p {
+            font-size: 1.5rem; /* 글씨 크기를 키움 */
+        }
+        /* Section 3의 테이블 텍스트 가운데 정렬 */
+        #section3 .table th,
+        #section3 .table td {
+            text-align: center; /* 테이블 헤더와 셀의 텍스트를 가운데 정렬 */
+        }
+        /* Section 4의 텍스트 크기 조정 */
+        #section4 .text-content p {
+            font-size: 1.5rem; /* 글씨 크기를 키움 */
+        }
+        /* Section 4의 장점 목록 스타일 조정 */
+        #section4 ul {
+            list-style-type: none; /* 기본 불릿 제거 */
+            padding-left: 0; /* 왼쪽 여백 제거 */
+        }
+        #section4 li {
+            margin-bottom: 20px; /* 항목 간 여백 추가 */
+            font-size: 25px; /* 글씨 크기 유지 */
+        }
+        #section4 .bi {
+            margin-right: 10px; /* 아이콘과 텍스트 간 간격 */
+            font-size: 1.5em; /* 아이콘 크기 조정 */
+            color: #fff; /* 아이콘 색상 흰색으로 */
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#section1">자기소개</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section2">경력기술</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section3">실험 기법 및 분석도구</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section4">나의 장점</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="section1" class="container-fluid bg-success text-white" style="padding:100px 20px;">
+        <h1>자기소개서</h1>
+        <br>
+        <div class="profile-container">
+            <img src="images/5.jpg" class="rounded-circle" alt="Cinque Terre" width="130" height="180">
+            <div class="text-content">
+                <p style="font-size:30px;">안녕하세요, "신지하" 입니다.</p>
+                <p>저는 생명과학 분야에서 다수의 논문을 발표하며 연구를 수행해왔습니다. <br>주요 연구 주제는 TBK1, mTOR, 그리고 Sestrin2와 같은 신호전달 경로를 통해 암 및 염증 반응을 조절하는 메커니즘입니다.</p>
+                <p>현재까지 Frontiers in Immunology, International Journal of Biological Sciences, Cancers 등의 저널에 논문을 게재하였으며, <br>앞으로도 지속적인 연구를 통해 학문적 기여를 하고자 합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="section2" class="container-fluid bg-warning" style="padding:100px 20px;">
+        <h1>경력기술서</h1>
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/1.jpg" alt="TBK1" class="d-block">
+                    <div class="carousel-caption">
+                        <h3>Frontiers in Immunology (2021) IF= 7.561</h3>
+                        <p>Targeting TBK1 Attenuates LPS-Induced NLRP3 Inflammasome <br>Activation by Regulating of mTORC1 Pathways in Trophoblasts</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/2.jpg" alt="amlexanox" class="d-block">
+                    <div class="carousel-caption">
+                        <h3>International Journal <br> of Biological Sciences (2025), IF= 10</h3>
+                        <p>TBK1 inhibitor amlexanox exerts anti-cancer effects <br>against endometrial cancer by regulating AKT/NF-κB signaling</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/3.jpg" alt="sestrin2" class="d-block">
+                    <div class="carousel-caption">
+                        <h3>Cancers (2020) IF= 6.126</h3>
+                        <p>mTOR-Dependent Role of Sestrin2 in Regulating <br>Tumor Progression of Human Endometrial Cancer</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/4.jpg" alt="sestrin2" class="d-block">
+                    <div class="carousel-caption">
+                        <h3>Frontiers in Immunology (2021) IF= 7.561</h3>
+                        <p>Targeting TBK1 Attenuates LPS-Induced NLRP3 Inflammasome <br>Activation by Regulating of mTORC1 Pathways in Trophoblasts</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <div class="container-fluid mt-3 text-center">
+            <p style="font-size:30px;">First author Publish Journal</p>
+        </div>
+    </div>
+
+    <div id="section3" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
+        <h1>실험 기법 및 분석 도구</h1>
+        <table class="table table-striped text-white">
+            <thead>
+                <tr>
+                    <th>실험기법</th>
+                    <th>분석도구</th>
+                    <th>자격증</th>
+                    <th>경력</th>
+                    <th>공부중</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>세포 배양 및 처리</td>
+                    <td>ImageJ</td>
+                    <td>GTQ3급(포토샵)</td>
+                    <td>건양대병원 산학연구단 1년</td>
+                    <td>python</td>
+                </tr>
+                <tr>
+                    <td>플라스미드 및 바이러스 유전자 도입</td>
+                    <td>Prism</td>
+                    <td>BLS(Basic Life Support)</td>
+                    <td>건양대학원 의학과 석사, 박사과정 7년</td>
+                    <td>DB(database)</td>
+                </tr>
+                <tr>
+                    <td>세포 증식 분석</td>
+                    <td>python</td>
+                    <td>태권도 2단</td>
+                    <td>[기타 경력]</td>
+                    <td>Web</td>
+                </tr>
+                <tr>
+                    <td>Colony 형성 분석</td>
+                    <td>HeidiSQL</td>
+                    <td>운전면허자격증 2종 보통</td>
+                    <td>홈플러스 농산코너,문화센터,카트</td>
+                    <td>AI 모델 개발</td>
+                </tr>
+                <tr>
+                    <td>세포 주기 분석</td>
+                    <td></td>
+                    <td></td>
+                    <td>레이싱 경주 행정</td>
+                    <td>빅데이터 분석</td>
+                </tr>
+                <tr>
+                    <td>RT-qPCR</td>
+                    <td></td>
+                    <td></td>
+                    <td>디에떼 카페</td>
+                    <td>비즈니스 영어</td>
+                </tr>
+                <tr>
+                    <td>Western blotting</td>
+                    <td></td>
+                    <td></td>
+                    <td>PC방 주/야간</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Wound healing assay</td>
+                    <td></td>
+                    <td></td>
+                    <td>맥주공장</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Transwell migration assay</td>
+                    <td></td>
+                    <td></td>
+                    <td>주차안내</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Immunology</td>
+                    <td></td>
+                    <td></td>
+                    <td>백화점 OPI 및 아이룩</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Xenograft 모델 구축</td>
+                    <td></td>
+                    <td></td>
+                    <td>의류판매</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="section4" class="container-fluid bg-info text-dark" style="padding:100px 20px;">
+        <h1>나의 장점</h1>
+        <br>
+        <ul>
+            <li><i class="bi bi-check-circle-fill"></i>어렸을때부터 끊임없이 아르바이트들을 해오며 서비스정신과 약간의 사회경험을 얻었으며 <br> 석사과정과 박사과정을 7년동안 하는 것으로 목표를 이루고자 하는 끈기를 보여주었다.</li>
+            <li><i class="bi bi-lightbulb-fill"></i>박사과정이 끝나자마자 취업시장에 달려들었으나 부족함을 깨닫고 사회에서 원하는 인재가 되기위해 바로 AI개발 교육과정에 들어왔으며 자기개발을 꾸준히 한다.</li>
+            <li><i class="bi bi-people-fill"></i>늘 자의적이든 타의적이든 보통 그룹의 리더를 되었으며 대부분의 모든 사람의 충돌없이 잘 지내왔고 항상 이를 잘 유지해왔다.</li>
+        </ul>
+    </div>
+</body>
+</html>
